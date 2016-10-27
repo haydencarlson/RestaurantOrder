@@ -13,6 +13,7 @@ var knex = require('knex')({
   }
 });
 
+app.use(express.static('public'));
 
 app.get("/", (req, res) => {
 
