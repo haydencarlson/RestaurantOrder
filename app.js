@@ -1,7 +1,7 @@
 const settings = require("./settings");
 const express = require("express");
 const app = express();
-const PORT = 8080;
+const PORT = 8000;
 var knex = require('knex')({
   client: 'pg',
   connection: {
