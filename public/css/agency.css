@@ -6,6 +6,7 @@
 body {
   overflow-x: hidden;
   font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #313b40;
 }
 
 }
@@ -32,7 +33,7 @@ body {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: white;
-  background-color: #fec503;
+  background-color: #8faeb0;
   border-color: #f6bf01;
 }
 .btn-primary:active,
@@ -55,8 +56,8 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #64787a;
+  border-color: #64787a;
 }
 .btn-primary .badge {
   color: #fed136;
@@ -64,8 +65,8 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-xl {
   color: white;
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #64787a;
+  border-color: #64787a;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -79,7 +80,7 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
   color: white;
-  background-color: #fec503;
+  background-color: transparent;
   border-color: #f6bf01;
 }
 .btn-xl:active,
@@ -109,13 +110,20 @@ fieldset[disabled] .btn-xl.active {
   color: #fed136;
   background-color: white;
 }
+
+.navbar {
+  background-color: #64787a;
+
+}
 .navbar-custom {
   background-color: #222222;
   border-color: transparent;
 }
-.navbar-custom .navbar-brand {
-  color: #fed136;
-  font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
+.navbar-custom .navbar-brand {  
+  color: #313b40;
+  font-family: "Kaushan Script", cursive;
+  font-style: bold;
+  margin: 0px auto;
 }
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
@@ -136,7 +144,7 @@ fieldset[disabled] .btn-xl.active {
 }
 .navbar-custom .navbar-toggle:hover,
 .navbar-custom .navbar-toggle:focus {
-  background-color: #fed136;
+  background-color: #313b40;
 }
 .navbar-custom .nav li a {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -153,17 +161,17 @@ fieldset[disabled] .btn-xl.active {
 .navbar-custom .navbar-nav > .active > a {
   border-radius: 0;
   color: white;
-  background-color: #fed136;
+  background-color: #313b40;
 }
 .navbar-custom .navbar-nav > .active > a:hover,
 .navbar-custom .navbar-nav > .active > a:focus {
-  color: white;
+  color: #313b40;
   background-color: #fec503;
 }
 @media (min-width: 768px) {
   .navbar-custom {
-    background-color: transparent;
-    padding: 25px 0;
+    background-color: #313b40;
+    padding: 0px 0;
     -webkit-transition: padding 0.3s;
     -moz-transition: padding 0.3s;
     transition: padding 0.3s;
@@ -190,6 +198,7 @@ fieldset[disabled] .btn-xl.active {
 }
 header {
   background-image: url(http://www.foodphotographyprops.co.uk/wp-content/uploads/2015/10/Food-Photography-Props-Web.jpg);
+  background-color: #313b40
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
