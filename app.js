@@ -9,7 +9,8 @@ var knex = require('knex')({
   password : settings.password,
   database : settings.database,
   host     : settings.hostname,
-  ssl      : settings.ssl
+  ssl      : settings.ssl,
+  debug    : true
   }
 });
 
@@ -25,9 +26,11 @@ console.log("hello");
 });
 
 app.post("/addtocart", (req, res) => {
+  knex.insert([{food: 'Chicken Parmigiana', price: '17', duration: '1020'}]).into('menu')
+      .then(function(){
+        console.log("Added to cart");
+      });
 
-  console.log("Added to cart");
-  knex.insert([{food: 'Chips'}, {price: 123}], 'id').into('menu');
 
 });
 
