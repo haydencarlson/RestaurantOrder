@@ -7,11 +7,10 @@ function renderOrder (order) {
 }
 
 function createNewOrder(posts) {
-	var $orderID = ('<h3>' + order1.ordernumberID + '</h3>');
-	var $timeRecieved = ('<h4>' + order1.timeRecieved + '</h4>');
+	var $orderID = ('<h2>' + order1.ordernumberID + '</h2>');
+	var $timeRecieved = ('<h3>' + order1.timeRecieved + '</h3>');
 
-	var $orderDetails = ('<p>' + order1.orderDetails + '</p>');
-	var $readyOrder = ()
+	var $orderDetails = ('<h4>' + order1.orderDetails + '</h4>');
 
 	var $clientName = ( + order1.clientInfo.name + )
 	var $clientPhone = ( + order1.clientInfo.phone + )

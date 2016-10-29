@@ -22,7 +22,7 @@
             <div class="intro-text">
                 <div class="intro-heading">Luigi's</div>
                 <!-- Button trigger modal -->
-                <a href="#services" class="page-scroll btn btn-xl" data-toggle="modal" data-target="#myModal">Order/Pickup</a>
+                <a href="#services" id="order-button" class="page-scroll btn btn-xl" data-toggle="modal" data-target="#myModal">Order/Pickup</a>
 
                 <!-- <button id="singlebutton" name="singlebutton" class="btn btn-primary">Next Step!</button>  -->
 
@@ -38,12 +38,39 @@
                       <div class="modal-body">
                         <div class="clos-xs-6 text-center">
                           <ul class="row">
-                            <input type="checkbox" name="food"/><span class="foodtext">Hamburger</span>
-                            <input type="checkbox" name="food"/><span class="foodtext">Hamburger</span>
-                            <input type="checkbox" name="food"/><span class="foodtext">Hamburger</span>
-                            <input type="checkbox" name="food"/><span class="foodtext">Hamburger</span>
-                            <button id="item1">asdasd </button>
+                              
+                              <% [{foodId:1, foodText: "Pesto Linguine"},
+                                  {foodId:2, foodText: "Penne with Chicken"},
+                                  {foodId:3, foodText: "Lasagna"},
+                                  {foodId:4, foodText: "Seafood Fettuccine Alfredo"},
+                                  {foodId:5, foodText: "Manicotti"},
+                                  {foodId:6, foodText: "Tortellini Pomodoro"},
+                                  {foodId:7, foodText: "Seafood Lineguine Marinara"},
+                                  {foodId:8, foodText: "Spicy Chorizo Penne"},
+                                  {foodId:9, foodText: "Spaghetti with Meatballs"},
+                                  {foodId:10, foodText: "Chicken Parmigiana"},
+                                  {foodId:11, foodText: "Stuffed Eggplant"},
+                                  {foodId:12, foodText: "Meatball Sub"},
+                                  {foodId:13, foodText: "Margherita Pizza"},
+                                  {foodId:14, foodText: "Pepperoni Pizza"},
+                                  {foodId:15, foodText: "Garden Salad"}].forEach(function(item){ %>
+
+                                  <input type="button" value="Add" class="foods1" data-food="<%= item.foodId %>" name="food"/>
+                                  <span class="foodtext"><%= item.foodText %> </span>
+
+                              <%  }); %>
+
+
+                              
+                            
                           </ul>
+                        </div>
+                        <div class="cartButtonContainer">
+                        <button class="cartButton"> View Cart </button>
+                        </div>
+                        <div class="cart">
+                        
+
                         </div>
                       </div>
                       <div class="modal-footer">
