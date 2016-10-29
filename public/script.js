@@ -4,7 +4,7 @@ $(function() {
     var foodId = $(this).attr("data-food");
     $.ajax({
       method: "post",
-      url: "/addtocart",
+      url: "/neworder/addtocart",
       data: {foodId: foodId }
     }).fail(function(err) {
       console.log(err);
@@ -34,5 +34,10 @@ $(function() {
       }).fail((err) => {
         alert(err);
     });
+  });
+
+  $(".btn btn-primary").on("click", function() {
+
+
   });
 });

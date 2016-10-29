@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/neworder", (req, res) => {
-   knex('order').insert({temporary_id: '123'})
+   knex('order').insert({order_placed: false})
     .returning("id")
     .then(function(id) {// [7] 
       req.session.orderid = id[0];
@@ -37,7 +37,12 @@ app.post("/neworder", (req, res) => {
     });
 });
 
-app.post("/addtocart", (req, res) => {
+app.post("/neworder/placed", (req, res) => {
+
+
+});
+
+app.post("/neworder/addtocart", (req, res) => {
   var foodId = Number(req.body.foodId);
   var orderid = req.session.orderid;
   console.log("hello", orderid);
@@ -51,7 +56,6 @@ app.post("/addtocart", (req, res) => {
 });
 
 app.get("/viewcart", (req, res) => {
-  var ordr = req.session.orderid;
   knex.select('')
   .from('menu')
   .join('order_item', 'menu_item_id', 'menu.id')
@@ -61,10 +65,13 @@ app.get("/viewcart", (req, res) => {
       console.log(err);
       res.status(400).json({error: err})
     } else {
+      console.log(rows);
       res.json({menu_items: rows});
     }   
   });   
 });
+
+
   
 app.listen(PORT, function() {
   console.log(`Now listening on port ${PORT}`);
