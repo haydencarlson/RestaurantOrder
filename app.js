@@ -25,7 +25,7 @@ app.get("/notify", function(req, res){
   twilio.sendMessage({
     to: "+16049920841",
     from: "+17782007530",
-    body: "Hello World"
+    body: "Your Order Is Ready"
   }, function (err, data) {
     if (err) {
       console.log(err);
