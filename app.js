@@ -1,7 +1,16 @@
 const settings = require("./settings");
 const express = require("express");
 
+
 const twilio = require("twilio")('AC63b1e5fd8330485b2919bef9f2b4fa74', 'c8b0a56d981e0e6f73dfdbaadae96ee0') 
+
+
+const sendgrid  = require('sendgrid').mail;
+const from_mail = new sendgrid.Email('kyleflemington@gmail.com');
+const to_email  = new sendgrid.Email('kyleflemington@gmail.com');
+const content   = new sendgrid.Content('text/plain', 'Order Details')
+const subject   = 'Your Order Details';
+const mail      = new sendgrid.Mail(from_mail, subject, to_email, content);
 
 
 
@@ -33,6 +42,8 @@ app.get("/notify", function(req, res){
     };
   });
 });
+
+
 
 app.get("/", (req, res) => {
 });
