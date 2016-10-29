@@ -19,6 +19,9 @@ body {
 .bg-darkest-gray {
   background-color: #222222;
 }
+.foods1 {
+  color:black;
+}
 .btn-primary {
   color: white;
   background-color: #fed136;
@@ -35,6 +38,9 @@ body {
   color: white;
   background-color: #8faeb0;
   border-color: #f6bf01;
+}
+.foodtext {
+  color:black;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -207,6 +213,7 @@ header {
   background-size: cover;
   -o-background-size: cover;
   text-align: center;
+
   color: white;
 }
 header .intro-text {
