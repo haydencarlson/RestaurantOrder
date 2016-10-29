@@ -6,7 +6,7 @@ function renderOrder (order) {
 	return true;
 }
 
-unction createNewOrder(posts) {
+function createNewOrder(posts) {
 	var $orderID = ('<h3>' + order1.ordernumberID + '</h3>');
 	var $timeRecieved = ('<h4>' + order1.timeRecieved + '</h4>');
 

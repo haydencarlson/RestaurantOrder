@@ -5,12 +5,13 @@ const express = require("express");
 const twilio = require("twilio")('AC63b1e5fd8330485b2919bef9f2b4fa74', 'c8b0a56d981e0e6f73dfdbaadae96ee0') 
 
 
-const sendgrid  = require('sendgrid').mail;
-const from_mail = new sendgrid.Email('kyleflemington@gmail.com');
-const to_email  = new sendgrid.Email('kyleflemington@gmail.com');
-const content   = new sendgrid.Content('text/plain', 'Order Details')
-const subject   = 'Your Order Details';
-const mail      = new sendgrid.Mail(from_mail, subject, to_email, content);
+
+const helper = require('sendgrid').mail;
+const from_email = new helper.Email('kyleflemington@gmail.com');
+const to_email = new helper.Email('kyleflemington@gmail.com');
+const subject = 'Your Order Details!';
+const content = new helper.Content('text/plain', 'Order Information');
+const mail = new helper.Mail(from_email, subject, to_email, content);
 
 
 
@@ -42,6 +43,24 @@ app.get("/notify", function(req, res){
     };
   });
 });
+
+
+app.get('/emailnotify', (req, res) => {
+  var sg = require('sendgrid')('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');
+  var request = sg.emptyRequest({
+    method: 'POST',
+    path: '/v3/mail/send',
+    body: mail.toJSON(),
+  });
+  sg.API(request, function(error, response) {
+    console.log(response.statusCode);
+    console.log(response.body);
+    console.log(response.headers);
+    res.send("ok")
+  });
+});
+
+
 
 
 
