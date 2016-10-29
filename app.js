@@ -1,5 +1,10 @@
 const settings = require("./settings");
 const express = require("express");
+
+const twilio = require("twilio");
+const client = twilio('AC63b1e5fd8330485b2919bef9f2b4fa74', 'c8b0a56d981e0e6f73dfdbaadae96ee0');
+
+
 const app = express();
 const PORT = 8080;
 var knex = require('knex')({
@@ -17,8 +22,6 @@ var knex = require('knex')({
 app.use(express.static('public'));
 
 app.get("/", (req, res) => {
-
- 
 });
 
 app.get("/addtocart", (req, res) => {
@@ -37,6 +40,11 @@ app.post("/addtocart", (req, res) => {
 
 app.listen(PORT, function() {
   console.log(`Now listening on port ${PORT}`);
+});
+
+app.set("view engine", "ejs");
+app.get("/admin", (req,res) => {
+res.render('admin')
 });
 
 
