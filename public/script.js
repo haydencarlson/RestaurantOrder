@@ -36,8 +36,21 @@ $(function() {
     });
   });
 
-  $(".btn btn-primary").on("click", function() {
+  $("#placeorder").on("click", function() {
+    $.ajax({
+      method: "post",
+      url: "/neworder/placed"
+    });
 
+  });
+
+  $(".ready").on("click", function() {
+    $.ajax({
+      method: "get",
+      url:"/pullorders"
+    }).then((orderdata) => {
+
+    });
 
   });
 });

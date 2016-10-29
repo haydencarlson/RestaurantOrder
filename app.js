@@ -1,22 +1,17 @@
 const settings = require("./settings");
 const express = require("express");
-
-
+const bodyParser = require("body-parser");
+const cookieSession = require('cookie-session')
 const twilio = require("twilio")('AC63b1e5fd8330485b2919bef9f2b4fa74', 'c8b0a56d981e0e6f73dfdbaadae96ee0') 
-
-
-
 const helper = require('sendgrid').mail;
 const from_email = new helper.Email('kyleflemington@gmail.com');
 const to_email = new helper.Email('kyleflemington@gmail.com');
 const subject = 'Your Order Details!';
 const content = new helper.Content('text/plain', 'Order Information');
 const mail = new helper.Mail(from_email, subject, to_email, content);
-
-
-
 const app = express();
 const PORT = 8080;
+
 var knex = require('knex')({
   client: 'pg',
   connection: {
@@ -29,7 +24,13 @@ var knex = require('knex')({
   }
 });
 
+app.set("view engine", "ejs");
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2']
+}))
 
 app.get("/notify", function(req, res){
   twilio.sendMessage({
@@ -43,7 +44,6 @@ app.get("/notify", function(req, res){
     };
   });
 });
-
 
 app.get('/emailnotify', (req, res) => {
   var sg = require('sendgrid')('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');
@@ -61,6 +61,7 @@ app.get('/emailnotify', (req, res) => {
 });
 
 app.get("/", (req, res) => {
+  res.render("index");
 });
 
 app.post("/neworder", (req, res) => {
@@ -73,7 +74,14 @@ app.post("/neworder", (req, res) => {
 });
 
 app.post("/neworder/placed", (req, res) => {
-
+   console.log(req.session.orderid);
+   knex('order')
+  .where('id', '=', req.session.orderid)
+  .update({
+    order_placed: true
+  }).then(function(request) {
+  res.sendStatus(200);
+});
 
 });
 
@@ -106,16 +114,31 @@ app.get("/viewcart", (req, res) => {
   });   
 });
 
+app.get("/pullorders", (req, res) => {
+  knex.select('')
+  .from('order')
+  .where("order_placed", "=", true)
+  .asCallback((err, rows) => {    
+    if (err) {
+      console.log(err);
+      res.status(400).json({error: err})
+    } else {
+      console.log(rows);
+      res.json({menu_items: rows});
+    }   
+  });  
+
+
+});
+
+app.get("/admin", (req,res) => {
+  res.render('admin')
+});
+
 app.listen(PORT, function() {
   console.log(`Now listening on port ${PORT}`);
 });
 
-
-
-app.set("view engine", "ejs");
-app.get("/admin", (req,res) => {
-res.render('admin')
-});
 
 
 
