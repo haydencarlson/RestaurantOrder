@@ -58,7 +58,7 @@ if (!isConfigured) {
 }
 
 // Export configuration object
-module.exports = cfg;
+
 
 
 
@@ -82,4 +82,3 @@ exports.notifyOnError = function(appError, request, response, next) {
   });
   next(appError);
 };
-

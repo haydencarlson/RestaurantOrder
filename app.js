@@ -1,8 +1,8 @@
 const settings = require("./settings");
 const express = require("express");
 
-const twilio = require("twilio");
-const client = twilio('AC63b1e5fd8330485b2919bef9f2b4fa74', 'c8b0a56d981e0e6f73dfdbaadae96ee0');
+const twilio = require("twilio")('AC63b1e5fd8330485b2919bef9f2b4fa74', 'c8b0a56d981e0e6f73dfdbaadae96ee0') 
+
 
 
 const app = express();
@@ -20,6 +20,19 @@ var knex = require('knex')({
 });
 
 app.use(express.static('public'));
+
+app.get("/notify", function(req, res){
+  twilio.sendMessage({
+    to: "+16049920841",
+    from: "+17782007530",
+    body: "Hello World"
+  }, function (err, data) {
+    if (err) {
+      console.log(err);
+    console.log(data);
+    };
+  });
+});
 
 app.get("/", (req, res) => {
 });
