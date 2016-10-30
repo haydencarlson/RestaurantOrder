@@ -9,8 +9,10 @@ body {
   margin:0;
   height:100%;
 }
-
+input {
+  color:black;
 }
+
 .img-centered {
   margin: 0 auto;
 }
