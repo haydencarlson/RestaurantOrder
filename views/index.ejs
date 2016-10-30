@@ -37,36 +37,293 @@
                       </div>
                       <div class="modal-body">
                         <div class="clos-xs-6 text-center">
-                          <ul class="row">
-                              
-                              <% [{foodId:1, foodText: "Pesto Linguine"},
-                                  {foodId:2, foodText: "Penne with Chicken"},
-                                  {foodId:3, foodText: "Lasagna"},
-                                  {foodId:4, foodText: "Seafood Fettuccine Alfredo"},
-                                  {foodId:5, foodText: "Manicotti"},
-                                  {foodId:6, foodText: "Tortellini Pomodoro"},
-                                  {foodId:7, foodText: "Seafood Lineguine Marinara"},
-                                  {foodId:8, foodText: "Spicy Chorizo Penne"},
-                                  {foodId:9, foodText: "Spaghetti with Meatballs"},
-                                  {foodId:10, foodText: "Chicken Parmigiana"},
-                                  {foodId:11, foodText: "Stuffed Eggplant"},
-                                  {foodId:12, foodText: "Meatball Sub"},
-                                  {foodId:13, foodText: "Margherita Pizza"},
-                                  {foodId:14, foodText: "Pepperoni Pizza"},
-                                  {foodId:15, foodText: "Garden Salad"}].forEach(function(item){ %>
+                          <div class = "row">
+  
 
-                                  <input type="button" value="Add" class="foods1" data-food="<%= item.foodId %>" name="food"/>
-                                  <span class="foodtext"><%= item.foodText %> </span>
+   <div class = "col-sm-6 col-md-3">
+      <div class = "thumbnail">
+         <img src = "http://i.imgur.com/5TbElFT.jpg" alt = "Pesto Linguine">
+      </div>
+      
+      <div class = "caption">
+         <h3>Pesto Linguine</h3>
+            <a href = "#" class = "btn btn-danger " role = "button">
+               Add to Order
+            </a>
+      </div>
+   </div>
 
-                              <%  }); %>
+   <div class = "col-sm-6 col-md-3">
+      <div class = "thumbnail">
+         <img src = "http://i.imgur.com/Cm5wiZE.jpg" alt = "Penne">
+      </div>
+      
+      <div class = "caption">
+         <h3>Penne with Chicken</h3>
+            <a href = "#" class = "btn btn-danger" role = "button">
+               Add to Order
+            </a>
+      </div>
+   </div>
 
 
-                              
-                            
-                          </ul>
+   <div class = "col-sm-6 col-md-3">
+      <div class = "thumbnail">
+         <img src = "http://i.imgur.com/1BvPVgH.jpg" alt = "Lasagna">
+      </div>
+      
+      <div class = "caption">
+         <h3>Lasagna</h3>
+           <a href = "#" class = "btn btn-danger" role = "button">
+               Add to Order
+            </a>
+      </div>
+   </div>
+
+
+   <div class = "col-sm-6 col-md-3">
+      <div class = "thumbnail">
+         <img src = "http://i.imgur.com/mcCkSUT.jpg" alt = "Seafood Fettuccine">
+      </div>
+      
+      <div class = "caption">
+         <h3>Seafood Fettuccine</h3>
+           <a href = "#" class = "btn btn-danger" role = "button">
+               Add to Order
+            </a>
+      </div>
+   </div>
+
+
+   <div class = "col-sm-6 col-md-3">
+      <div class = "thumbnail">
+         <img src = "http://i.imgur.com/K6LesSJ.jpg" alt = "Manicotti">
+      </div>
+      
+      <div class = "caption">
+         <h3>Manicotti</h3>
+            <a href = "#" class = "btn btn-danger" role = "button">
+               Add to Order
+            </a>
+      </div>
+   </div>
+
+
+   <div class = "col-sm-6 col-md-3">
+      <div class = "thumbnail">
+         <img src = "http://i.imgur.com/sLMh1Zs.jpg" alt = "Tortellini">
+      </div>
+      
+      <div class = "caption">
+         <h3>Tortellini Pomodoro</h3>
+            <a href = "#" class = "btn btn-danger" role = "button">
+               Add to Order
+            </a>
+      </div>
+   </div>
+
+
+   <div class = "col-sm-6 col-md-3">
+      <div class = "thumbnail">
+         <img src = "http://i.imgur.com/nALvlTY.jpg" alt = "Seafood Linguine">
+      </div>
+      
+      <div class = "caption">
+         <h3>Seafood Linguine</h3>
+            <a href = "#" class = "btn btn-danger" role = "button">
+               Add to Order
+            </a>
+      </div>
+   </div>
+
+
+   <div class = "col-sm-6 col-md-3">
+      <div class = "thumbnail">
+         <img src = "http://i.imgur.com/zuX2lWB.jpg" alt = "Chorizo Penne">
+      </div>
+      
+      <div class = "caption">
+         <h3>Spicy Chorizo Penne</h3>
+            <a href = "#" class = "btn btn-danger" role = "button">
+               Add to Order
+            </a>
+      </div>
+   </div>
+
+
+   <div class = "col-sm-6 col-md-3">
+      <div class = "thumbnail">
+         <img src = "http://i.imgur.com/W3HA490.jpg" alt = "Spaghetti">
+      </div>
+      
+      <div class = "caption">
+         <h3>Spaghetti with Meatballs</h3>
+            <a href = "#" class = "btn btn-danger" role = "button">
+               Add to Order
+            </a>
+      </div>
+   </div>
+
+
+   <div class = "col-sm-6 col-md-3">
+      <div class = "thumbnail">
+         <img src = "http://i.imgur.com/ymUW0vx.jpg" alt = "Chicken Parmigiana">
+      </div>
+      
+      <div class = "caption">
+         <h3>Chicken Parmigiana</h3>
+            <a href = "#" class = "btn btn-danger" role = "button">
+               Add to Order
+            </a>
+      </div>
+   </div>
+
+
+   <div class = "col-sm-6 col-md-3">
+      <div class = "thumbnail">
+         <img src = "http://i.imgur.com/bvqURmI.jpg" alt = "Stuffed Eggplant">
+      </div>
+      
+      <div class = "caption">
+         <h3>Stuffed Eggplant</h3>
+            <a href = "#" class = "btn btn-danger" role = "button">
+               Add to Order
+            </a>
+      </div>
+   </div>
+
+
+   <div class = "col-sm-6 col-md-3">
+      <div class = "thumbnail">
+         <img src = "http://i.imgur.com/TK788Pm.jpg" alt = "Shrimp Scampi">
+      </div>
+      
+      <div class = "caption">
+         <h3>Shrimp Scampi</h3>
+            <a href = "#" class = "btn btn-danger" role = "button">
+               Add to Order
+            </a>
+      </div>
+   </div>
+
+
+   <div class = "col-sm-6 col-md-3">
+      <div class = "thumbnail">
+         <img src = "http://i.imgur.com/YB81xhm.jpg" alt = "Meatball Sub">
+      </div>
+      
+      <div class = "caption">
+         <h3>Meatball Sub</h3>
+            <a href = "#" class = "btn btn-danger" role = "button">
+               Add to Order
+            </a>
+      </div>
+   </div>
+
+
+   <div class = "col-sm-6 col-md-3">
+      <div class = "thumbnail">
+         <img src = "http://i.imgur.com/8gfX3rM.jpg" alt = "Marherita Pizza">
+      </div>
+      
+      <div class = "caption">
+         <h3>Margherita Pizza</h3>
+            <a href = "#" class = "btn btn-danger" role = "button">
+               Add to Order
+            </a>
+      </div>
+   </div>
+
+
+   <div class = "col-sm-6 col-md-3">
+      <div class = "thumbnail">
+         <img src = "http://i.imgur.com/tMKsfTb.jpg" alt = "Pepperoni Pizza">
+      </div>
+      
+      <div class = "caption">
+         <h3>Pepperoni Pizza</h3>
+            <a href = "#" class = "btn btn-danger" role = "button">
+               Add to Order
+            </a>
+      </div>
+   </div>
+
+
+   <div class = "col-sm-6 col-md-3">
+      <div class = "thumbnail">
+         <img src = "http://i.imgur.com/XkOlQAK.jpg" alt = "Capricciosa Pizza">
+      </div>
+      
+      <div class = "caption">
+         <h3>Capricciosa Pizza</h3>
+            <a href = "#" class = "btn btn-danger" role = "button">
+               Add to Order
+            </a>
+      </div>
+   </div>
+
+
+   <div class = "col-sm-6 col-md-3">
+      <div class = "thumbnail">
+         <img src = "http://i.imgur.com/aV0zy7z.jpg" alt = "Quattro Formaggi Pizza">
+      </div>
+      
+      <div class = "caption">
+         <h3>Quattro Formaggi Pizza</h3>
+            <a href = "#" class = "btn btn-danger" role = "button">
+               Add to Order
+            </a>
+      </div>
+   </div>
+
+
+   <div class = "col-sm-6 col-md-3">
+      <div class = "thumbnail">
+         <img src = "http://i.imgur.com/hemM50Z.jpg" alt = "Garden Salad">
+      </div>
+      
+      <div class = "caption">
+         <h3>Gardan Salad</h3>
+            <a href = "#" class = "btn btn-danger" role = "button">
+               Add to Order
+            </a>
+      </div>
+   </div>
+
+
+   <div class = "col-sm-6 col-md-3">
+      <div class = "thumbnail">
+         <img src = "http://i.imgur.com/SBzsIvo.jpg" alt = "caesar salad">
+      </div>
+      
+      <div class = "caption">
+         <h3>Caesar Salad</h3>
+            <a href = "#" class = "btn btn-danger" role = "button">
+               Add to Order
+            </a>
+      </div>
+   </div>
+
+
+   <div class = "col-sm-6 col-md-3">
+      <div class = "thumbnail">
+         <img src = "http://i.imgur.com/wD3ROvd.jpg" alt = "Garlic Bread">
+      </div>
+      
+      <div class = "caption">
+         <h3>Garlic Bread</h3>
+            <a href = "#" class = "btn btn-danger" role = "button">
+               Add to Order
+            </a>
+      </div>
+   </div>
+
+
                         </div>
+
+                        <br></br>
                         <div class="cartButtonContainer">
-                        <button class="cartButton"> View Cart </button>
+                        <button class="cartButton"> View Order </button>
                         </div>
                         <div class="cart">
                         
@@ -75,7 +332,7 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" id="placeorder" class="btn btn-primary">Save changes</button>
+                        <button type="button" id="placeorder" class="btn btn-primary">Place Order</button>
                       </div>
                     </div>
                   </div>
