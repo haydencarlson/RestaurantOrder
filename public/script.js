@@ -49,25 +49,12 @@ $(function() {
     });
   });
 
-  $(".ready").on("click", function() {
-    $("foodItem").empty();
+  $("body").on("click", function() {
     $.ajax({
       method: "get",
       url:"/pullorders"
     }).then((orderdata) => {
     //call $.ajax here
-        orderdata.orders.forEach((item) => {
-          $("#orderID").replaceWith(`<h2>${item.id}</h2>`);
-          $(".col-sm-12").append(`<p class = "foodItem">${item.food}</p>`);
-
-      orderdata.menu_items.forEach((item) => {
-        var orderfood = item.food;
-         var orderid = item.id;
-
-        $("#orderDetails").append(`<p>${orderfood}</p>`);
-      });
-
-
     });
   });
 });

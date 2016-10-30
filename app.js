@@ -110,7 +110,7 @@ app.get("/viewcart", (req, res) => {
     }   
   });   
 });
-
+var groupsResult = {};
 app.get("/pullorders", (req, res) => {
   knex.select('order.id', 'food')
   .from('menu')
@@ -122,13 +122,28 @@ app.get("/pullorders", (req, res) => {
       console.log(err);
       res.status(400).json({error: err})
     } else {
-      res.json({orders: rows});
+      var groups = {};
+      rows.forEach(function(item) {
+        var list = groups[item.id];
+        if (list) {
+          list.push(item.food);
+        } else {
+          groups[item.id] = [item.food];
+        }
+        groupsResult = groups;
+      });
+      res.json(groupsResult);
     }   
   });  
 });
 
 app.get("/admin", (req,res) => {
-  res.render('admin')
+ 
+  var templateVars = {
+    orderID: groupsResult
+  }
+  res.render('admin', templateVars)
+
 });
 
 app.listen(PORT, function() {

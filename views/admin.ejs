@@ -15,10 +15,7 @@
 
 		<body>
 
-			<%
-			[ {foodId:1, foodText: ["Pesto Linguine","Penne with Chicken"]},
-			  {foodId:2, foodText: "Lasagna"},
-			  {foodId:3, foodText: "Garden Salad"}].forEach(function(item){ %>
+			<% for(var keys in orderID) { %>
 
 
 					<div  class='container ready' name="newOrder">
@@ -26,12 +23,12 @@
 							<div class='col-xs-12'>
 
 								<!-- Insert order_id -->
-					  		<h3 class= 'col-xs-12' id="orderID"><%= "Order ID: " + item.foodId %></h3>
+					  		<h3 class= 'col-xs-12' id="orderID"><%= "Order ID: " + keys %></h3>
 
 								<div class='col-xs-12'>
 
 									<!-- Insert the array of order_items -->
-									<%["Pesto Linguine","Penne with Chicken"].forEach(function (el) { %>
+									<%	orderID[keys].forEach(function (el) { %>
 									<li class='fooditem'><%= el %></li>
 									<% }) %>
 
@@ -42,7 +39,7 @@
 							</div>
 						</div>
 					</div>
-			<%  }); %>
+			<%  } %>
 
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
