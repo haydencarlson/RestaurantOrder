@@ -10,7 +10,7 @@ $(function() {
       console.log(err);
     });
   });
-  
+
   $("#order-button").on("click", function() {
     $.ajax({
       method: "post",
@@ -61,7 +61,7 @@ $(function() {
 
         $("#orderDetails").append(`<p>${orderfood}</p>`);
       });
-      
+
     });
 
   });

@@ -1,8 +1,4 @@
-/*!
- * Start Bootstrap - Agency v3.3.7+1 (http://startbootstrap.com/template-overviews/agency)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
+
  html {
   height:100%;
  }
@@ -135,7 +131,7 @@ fieldset[disabled] .btn-xl.active {
   background-color: #222222;
   border-color: transparent;
 }
-.navbar-custom .navbar-brand {  
+.navbar-custom .navbar-brand {
   color: #313b40;
   font-family: "Kaushan Script", cursive;
   font-style: bold;
