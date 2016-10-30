@@ -1,7 +1,6 @@
 $(function(){
     $('.ready').click(function(){
-        console.log("click")
-        $('.col-md-12').slideToggle("fast");
+        $(this).hide("slow");
     });
 });
 

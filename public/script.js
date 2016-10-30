@@ -1,6 +1,6 @@
 $(function() {
 
-  $(".foods1").on("click", function(event) {
+  $(".foodItem").on("click", function(event) {
     var foodId = $(this).attr("data-food");
     $.ajax({
       method: "post",
@@ -10,7 +10,7 @@ $(function() {
       console.log(err);
     });
   });
-  
+
   $("#order-button").on("click", function() {
     $.ajax({
       method: "post",
@@ -18,7 +18,7 @@ $(function() {
     });
   });
 
-  $(".cartButton").on("click", function() {
+  $(".foodItem").on("click", function() {
     $(".cart").empty();
     $.ajax({
       method: "get",
@@ -41,28 +41,20 @@ $(function() {
       method: "post",
       url: "/neworder/placed"
     }).then((email) => {
+      alert("Your order has been placed. Check your email for order details!");
       $.ajax({
         method: "get",
         url: "/emailnotify"
       });
     });
-
   });
 
-  $(".ready").on("click", function() {
+  $("body").on("click", function() {
     $.ajax({
       method: "get",
       url:"/pullorders"
     }).then((orderdata) => {
-
-      orderdata.menu_items.forEach((item) => {
-        var orderfood = item.food;
-         var orderid = item.id;
-
-        $("#orderDetails").append(`<p>${orderfood}</p>`);
-      });
-      
+    //call $.ajax here
     });
-
   });
 });
