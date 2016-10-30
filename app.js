@@ -74,16 +74,13 @@ app.post("/neworder", (req, res) => {
 });
 
 app.post("/neworder/placed", (req, res) => {
-
-   console.log(req.session.orderid);
    knex('order')
   .where('id', '=', req.session.orderid)
   .update({
     order_placed: true
   }).then(function(request) {
   res.sendStatus(200);
-});
-
+  });
 });
 
 app.post("/neworder/addtocart", (req, res) => {
@@ -95,7 +92,6 @@ app.post("/neworder/addtocart", (req, res) => {
       console.log(err);
     }
   });
-  console.log("foodId", foodId);
   res.sendStatus(200);
 });
 
@@ -116,7 +112,7 @@ app.get("/viewcart", (req, res) => {
 });
 
 app.get("/pullorders", (req, res) => {
-  knex.select('')
+  knex.select('order.id', 'food')
   .from('menu')
   .join('order_item', 'menu_item_id', 'menu.id')
   .join('order', 'order_id', 'order.id')
@@ -126,10 +122,7 @@ app.get("/pullorders", (req, res) => {
       console.log(err);
       res.status(400).json({error: err})
     } else {
-      console.log(rows);
-
-      //process json      
-      res.json({menu_items: rows});
+      res.json({orders: rows});
     }   
   });  
 });
