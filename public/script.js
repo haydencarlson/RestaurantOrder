@@ -40,6 +40,11 @@ $(function() {
     $.ajax({
       method: "post",
       url: "/neworder/placed"
+    }).then((email) => {
+      $.ajax({
+        method: "get",
+        url: "/emailnotify"
+      });
     });
 
   });
@@ -50,6 +55,13 @@ $(function() {
       url:"/pullorders"
     }).then((orderdata) => {
 
+      orderdata.menu_items.forEach((item) => {
+        var orderfood = item.food;
+         var orderid = item.id;
+
+        $("#orderDetails").append(`<p>${orderfood}</p>`);
+      });
+      
     });
 
   });

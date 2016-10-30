@@ -3,6 +3,9 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
+ html {
+  height:100%;
+ }
 body {
   overflow-x: hidden;
   font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -220,7 +223,7 @@ header {
   background-size: cover;
   -o-background-size: cover;
   text-align: center;
-
+  height:100%;
   color: white;
 }
 header .intro-text {

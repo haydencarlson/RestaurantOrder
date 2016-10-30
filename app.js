@@ -74,6 +74,7 @@ app.post("/neworder", (req, res) => {
 });
 
 app.post("/neworder/placed", (req, res) => {
+
    console.log(req.session.orderid);
    knex('order')
   .where('id', '=', req.session.orderid)
@@ -116,7 +117,9 @@ app.get("/viewcart", (req, res) => {
 
 app.get("/pullorders", (req, res) => {
   knex.select('')
-  .from('order')
+  .from('menu')
+  .join('order_item', 'menu_item_id', 'menu.id')
+  .join('order', 'order_id', 'order.id')
   .where("order_placed", "=", true)
   .asCallback((err, rows) => {    
     if (err) {
@@ -124,11 +127,11 @@ app.get("/pullorders", (req, res) => {
       res.status(400).json({error: err})
     } else {
       console.log(rows);
+
+      //process json      
       res.json({menu_items: rows});
     }   
   });  
-
-
 });
 
 app.get("/admin", (req,res) => {
