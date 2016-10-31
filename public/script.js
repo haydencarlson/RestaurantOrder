@@ -7,6 +7,7 @@ $(function() {
       url: "/neworder/addtocart",
       data: {foodId: foodId }
     }).then((dat) => {
+      $(".cart").empty();
        $.ajax({
       method: "get",
       url: "/viewcart",
