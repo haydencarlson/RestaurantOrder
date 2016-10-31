@@ -6,8 +6,18 @@ $(function() {
       method: "post",
       url: "/neworder/addtocart",
       data: {foodId: foodId }
-    }).fail(function(err) {
-      console.log(err);
+    }).then((dat) => {
+       $.ajax({
+      method: "get",
+      url: "/viewcart",
+    }).then((data) => {
+       var sum = data.menu_items.reduce((a,b) => a + b.price, 0);
+        $(".cart").append(`<p class="cartList">Price: $${sum} </p>`);
+
+        data.menu_items.forEach((item) => {
+          $(".cart").append(`<p class="cartList"> ${item.food} </p>`);
+        });
+    });
     });
   });
 
@@ -19,23 +29,23 @@ $(function() {
     });
   });
 
-  $(".foodItem").on("click", function() {
-    $(".cart").empty();
-    $.ajax({
-      method: "get",
-      url: "/viewcart",
-    }).then((data) => {
+  // $(".foodItem").on("click", function() {
+  //   $(".cart").empty();
+  //   $.ajax({
+  //     method: "get",
+  //     url: "/viewcart",
+  //   }).then(function(data) {
 
-        var sum = data.menu_items.reduce((a,b) => a + b.price, 0);
-        $(".cart").append(`<p class="cartList">Price: $${sum} </p>`);
+  //       var sum = data.menu_items.reduce((a,b) => a + b.price, 0);
+  //       $(".cart").append(`<p class="cartList">Price: $${sum} </p>`);
 
-        data.menu_items.forEach((item) => {
-          $(".cart").append(`<p class="cartList"> ${item.food} </p>`);
-        });
-      }).fail((err) => {
-        alert(err);
-    });
-  });
+  //       data.menu_items.forEach((item) => {
+  //         $(".cart").append(`<p class="cartList"> ${item.food} </p>`);
+  //       });
+  //     }).fail((err) => {
+  //       alert(err);
+  //   });
+  // });
 
   $("#placeorder").on("click", function() {
     $.ajax({
