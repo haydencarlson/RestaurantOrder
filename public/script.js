@@ -50,12 +50,10 @@ $(function() {
     });
   });
 
-  $("body").on("click", function() {
+ 
     $.ajax({
       method: "get",
       url:"/pullorders"
-    }).then((orderdata) => {
-    //call $.ajax here
     });
-  });
+
 });
