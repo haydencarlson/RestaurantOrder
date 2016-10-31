@@ -11,6 +11,7 @@ body {
 }
 button, input, optgroup, select, textarea {
   margin-bottom:10px;
+
   border-radius: 5px;
 } 
 
@@ -37,6 +38,19 @@ img {
   background-color: #222222;
 }
 .foods1 {
+  color:black;
+}
+#myModalLabel {
+  color:black;
+}
+.modal-body {
+  position: relative;
+  padding:15px;
+  max-height:536px;
+  overflow:scroll;
+}
+h5 {
+  font-size: 35px;
   color:black;
 }
 .btn-primary {

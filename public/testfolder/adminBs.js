@@ -1,6 +1,7 @@
 $(function(){
     $('.ready').click(function(){
         $(this).hide("slow");
+
     });
 });
 

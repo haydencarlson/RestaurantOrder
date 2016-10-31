@@ -1,16 +1,19 @@
 
 
 div.frame {
-  background-color: #8faeb0;
+  background-color: #fff;
 }
 
 button.order {
 	background-color: red;
 }
-
+body {
+  background-image: url(../background.jpg);
+  background-attachment: fixed;
+}
 
 div.container {
-  background-color: #ffb85b;
+  background-color: rgba(255, 255, 255, 0.78);
   border-radius: 25px 25px 25px 25px;
   border: 3px solid #313b40;
   width: 50%;
@@ -20,17 +23,24 @@ div.container {
   margin-top: 3em;
 
 }
-
+.fooditem {
+  font-family: "Montserrat";
+}
+h4 {
+  font-size:20px;
+  color:black;
+}
 
 #orderDetails {
   text-align: center;
 }
 
 #orderID {
-  font-family: Helvetica;
+  font-family: "Montserrat";
   text-transform: uppercase;
   font-weight: 700;
   font-size: 25px;
+  color:black;
 }
 
 .fooditem {

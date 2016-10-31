@@ -3,8 +3,6 @@ exports.up = function(knex, Promise) {
     table.increments('id');
     table.string('food');
     table.integer('price');
-    table.integer('duration');
-
 
   });
 };

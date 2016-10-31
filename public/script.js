@@ -12,6 +12,7 @@ $(function() {
   });
 
   $("#order-button").on("click", function() {
+    $(".cart").empty();
     $.ajax({
       method: "post",
       url: "/neworder"
