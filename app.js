@@ -146,7 +146,7 @@ app.get("/admin", (req,res) => {
 
 });
 
-app.listen(8080, function() {
+app.listen(process.env.PORT, function() {
   console.log(`Now listening on port ${PORT}`);
 });
 
