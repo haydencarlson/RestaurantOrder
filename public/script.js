@@ -47,13 +47,16 @@ $(function() {
         method: "get",
         url: "/emailnotify"
       });
+    }).then(function() {
+       $.ajax({
+      method: "get",
+      url:"/pullorders"
+    });
+
     });
   });
 
  
-    $.ajax({
-      method: "get",
-      url:"/pullorders"
-    });
+   
 
 });
