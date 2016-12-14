@@ -22,6 +22,15 @@ $(function() {
     });
   });
 
+  $('.remodal-confirm').on('click', function(event) {
+    let newMenuItem = {
+      foodName: $("#foodName").val(),
+      foodPrice: $("#foodPrice").val(),
+      foodURL: $("#foodPrice").val()
+    };
+    $.post('/menu/update', newMenuItem);
+  });
+
   $("#order-button").on("click", function() {
     $(".cart").empty();
     $.ajax({
@@ -66,6 +75,7 @@ $(function() {
 
     });
   });
+
 
  
    

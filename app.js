@@ -73,6 +73,12 @@ app.post("/neworder", (req, res) => {
     });
 });
 
+app.post("/menu/update", (req, res) => {
+  console.log(req.body);
+  console.log(req.body.newMenuItem);
+  res.sendStatus(200);
+});
+
 app.post("/neworder/placed", (req, res) => {
    knex('order')
   .where('id', '=', req.session.orderid)

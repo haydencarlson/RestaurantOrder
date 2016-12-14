@@ -16,6 +16,18 @@ body {
   text-decoration: none;
   color: #f2f2f2;
 }
+#foodName {
+  display:block;
+  margin:0px auto;
+}
+#foodPrice {
+  display:block;
+  margin:0px auto;
+}
+#foodURL {
+  display:block;
+  margin:0px auto;
+}
 li a {
   display: inline-block;
   color: #f2f2f2;

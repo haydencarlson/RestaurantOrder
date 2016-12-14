@@ -23,10 +23,16 @@
 		<div class="remodal-bg">
 			<div class="remodal" data-remodal-id="modal">
 			  <button data-remodal-action="close" class="remodal-close"></button>
-			  <h1>Add New Menu Item</h1>
-			  <p>
-			    What would you like to add?
-			  </p>
+			  <h1>What would you like to add?</h1>
+			  <form>
+			  	<label for="foodName">Dish Name </label>
+			  	<input type="text" id="foodName" name="foodName"/>
+			  	<label for="foodPrice">Price </label>
+			  	<input type="text" id="foodPrice" name="foodPrice"/>
+			  	<label for="foodImg">Image URL </label>
+			  	<input type="text" id="foodURL" name="foodImg"/>
+			  </form>
+			  
 			  <br>
 			  <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
 			  <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
