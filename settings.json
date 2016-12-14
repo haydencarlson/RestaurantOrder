@@ -1,8 +1,8 @@
 {
-  "user": "akuerfngvvjfgi",
-  "database": "d1oeq5hinl8v08",
-  "hostname": "ec2-54-163-245-32.compute-1.amazonaws.com",
-  "password": "nNGiNDwrJ2wCsZI05qfFgad_64",
+  "user": "hayden",
+  "database": "foodorder",
+  "hostname": "localhost",
+  "password": "a",
   "port": 5432,
   "ssl": true
 }

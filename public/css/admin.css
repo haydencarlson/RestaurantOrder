@@ -12,7 +12,22 @@ body {
   background-attachment: fixed;
   background-size:cover;
 }
-
+#addItem {
+  text-decoration: none;
+  color: #f2f2f2;
+}
+li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration:none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+li a:hover {
+  background-color: #555;
+}
 div.container {
   background-color: rgba(255, 255, 255, 0.78);
   border-radius: 25px 25px 25px 25px;
@@ -22,6 +37,16 @@ div.container {
   margin-left: 25%;
   margin-right: 25%;
   margin-top: 3em;
+}
+#adminNav {
+  list-style-type: none;
+  background-color: #333;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-bottom: 1px solid black;
+  width: 100%;
+  border-radius: 3px;
 }
 .fooditem {
   font-family: "Montserrat";
