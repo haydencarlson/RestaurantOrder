@@ -61,7 +61,20 @@ app.get('/emailnotify', (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.render("index");
+  knex.select().from('menu')
+    .then((response) => {
+      var rootVars = {
+        response: response
+      }
+      res.render("index", rootVars);
+    });
+});
+
+app.get("/menuitems", (req, res) => {
+  knex.select().from('menu')
+    .then((response) => {
+      res.json({menu_items: response})
+    });
 });
 
 app.post("/neworder", (req, res) => {
@@ -74,9 +87,15 @@ app.post("/neworder", (req, res) => {
 });
 
 app.post("/menu/update", (req, res) => {
-  console.log(req.body);
-  console.log(req.body.newMenuItem);
-  res.sendStatus(200);
+  var menuItemInfo = {
+    foodName: req.body.foodName,
+    foodPrice: req.body.foodPrice,
+    foodURL: req.body.foodURL
+  }
+  knex('menu').insert({food: menuItemInfo.foodName, price: menuItemInfo.foodPrice, img_url: menuItemInfo.foodURL})
+    .then(() => {
+      res.sendStatus(200);
+    });
 });
 
 app.post("/neworder/placed", (req, res) => {

@@ -12,7 +12,9 @@
     <header>
         <div class="container">
             <div class="intro-text">
-                <div class="intro-heading">Luigi's</div>
+                
+                <div class="intro-heading"></div>
+                
                 <!-- Button trigger modal -->
                 <a href="#5b6i5BT5T3" id="order-button" class="page-scroll btn btn-xl" data-toggle="modal" data-target="#myModal">Order/Pickup</a>
 
@@ -30,19 +32,20 @@
                       <div class="modal-body">
                         <div class="clos-xs-6 text-center">
                           <div class = "row">
-
+   <% response.forEach((item, index) => { %>                         
    <div class = "col-sm-6 col-md-3">
       <div class = "thumbnail">
-         <img src = "http://i.imgur.com/5TbElFT.jpg" alt = "Pesto Linguine">
+         <img src = "<%= item.img_url %> " alt = "Pesto Linguine">
       </div>
       
       <div class = "caption">
-         <h3>Pesto Linguine</h3>
+         <h3><%= item.food %></h3>
             <a class = "btn btn-danger foodItem" data-food="1" role = "button">
                Add to Order
             </a>
       </div>
    </div>
+   <% }); %>
 
 
                         </div>

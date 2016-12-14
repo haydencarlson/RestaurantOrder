@@ -23,10 +23,10 @@ $(function() {
   });
 
   $('.remodal-confirm').on('click', function(event) {
-    let newMenuItem = {
+    var newMenuItem = {
       foodName: $("#foodName").val(),
       foodPrice: $("#foodPrice").val(),
-      foodURL: $("#foodPrice").val()
+      foodURL: $("#foodURL").val()
     };
     $.post('/menu/update', newMenuItem);
   });
