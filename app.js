@@ -13,7 +13,7 @@ const app = express();
 const PORT = 8080;
 
 var knex = require('knex')({
-  client: 'pg',
+  client: 'postgresql',
   connection: {
   user     : settings.user,
   password : settings.password,
@@ -111,27 +111,25 @@ app.post("/neworder/placed", (req, res) => {
 app.post("/neworder/addtocart", (req, res) => {
   var foodId = Number(req.body.foodId);
   var orderid = req.session.orderid;
-  console.log("hello", orderid);
-  knex('order_item').insert({menu_item_id: foodId, order_id: orderid}).asCallback(function(err) {
+  knex('order_item').insert({menu_item_id: foodId, order_id: orderid}).asCallback(function(err, res) {
     if (err) {
       console.log(err);
-    }
+    } 
+    console.log("Added succesfully to cart");
   });
   res.sendStatus(200);
 });
 
 app.get("/viewcart", (req, res) => {
-  knex.select('')
+  knex.select('food', 'price')
   .from('menu')
   .join('order_item', 'menu_item_id', 'menu.id')
-  .where("order_id", "=", req.session.orderid)
   .asCallback((err, rows) => {    
     if (err) {
       console.log(err);
       res.status(400).json({error: err})
     } else {
-      console.log(rows);
-      res.json({menu_items: rows});
+      res.json({order_items: rows});
     }   
   });   
 });

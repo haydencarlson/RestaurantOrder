@@ -32,20 +32,20 @@
                       <div class="modal-body">
                         <div class="clos-xs-6 text-center">
                           <div class = "row">
-   <% response.forEach((item, index) => { %>                         
-   <div class = "col-sm-6 col-md-3">
-      <div class = "thumbnail">
-         <img src = "<%= item.img_url %> " alt = "Pesto Linguine">
-      </div>
-      
-      <div class = "caption">
-         <h3><%= item.food %></h3>
-            <a class = "btn btn-danger foodItem" data-food="1" role = "button">
-               Add to Order
-            </a>
-      </div>
-   </div>
-   <% }); %>
+     <% response.forEach((item, index) => { %>                         
+       <div class = "col-sm-6 col-md-3">
+          <div class = "thumbnail">
+             <img src = "<%= item.img_url %> " alt = "Pesto Linguine">
+          </div>
+          
+          <div class = "caption">
+             <h3><%= item.food %></h3>
+                <a class = "btn btn-danger foodItem" data-food="<%= item.id %>" role = "button">
+                   Add to Order
+                </a>x
+          </div>
+       </div>
+     <% }); %>
 
 
                         </div>

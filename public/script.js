@@ -12,10 +12,11 @@ $(function() {
       method: "get",
       url: "/viewcart",
     }).then((data) => {
-       var sum = data.menu_items.reduce((a,b) => a + b.price, 0);
+      console.log(data);
+       var sum = data.order_items.reduce((a,b) => a + b.price, 0);
         $(".cart").append(`<p class="cartList">Price: $${sum} </p>`);
 
-        data.menu_items.forEach((item) => {
+        data.order_items.forEach((item) => {
           $(".cart").append(`<p class="cartList"> ${item.food} </p>`);
         });
     });
